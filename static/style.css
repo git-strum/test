@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Styling of nav bar */
+nav {
+  background-color: rgba(0,0,0,255);
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+nav ul{
+  display: inline-flex;
+  gap: 5rem;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  margin-right:20px;
+}
+nav a{
+  color: rgba(207, 219, 223, 0.999);
+  text-decoration: none;
+  display:inline-block;
+}
+nav li a:hover {
+  color: rgb(250, 248, 248);
+  transform: scale(1.1);
+  transition: transform 0.1s;
+}
+
+.name-logo img{
+  width:150px;
+  height:70px;
+}
+
+.name-logo h1{
+  overflow: hidden;
+  background: linear-gradient(50deg, rgb(250, 248, 248), #d9b1a5,#54533e,#ae1313, #30b1f0, #6e30f0);
+  background-size: 400% 400%;    /* For an animated effect */
+  /* animation: gradient-animation 15s ease; */
+  animation: gradient-effect 6s ease infinite;
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+  margin:0;
+  padding: 10px;
+  box-sizing: border-box;
+}
+@keyframes gradient-effect {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+/* Styling of hero section */
+
+.hero {
+  color: rgba(207, 219, 223, 0.999);
+  font-size: 1em;
+  background-image: url('./images/hero.png');
+  background-repeat:no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 90vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.hero-intro {
+  opacity: 95%;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.8);
+  border-radius: 1px;
+  padding: 25px;
+  width:200px;
+  margin-bottom: 10px;
+}
+
+.my-pic{
+  background-image: url('./images/my_pic.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 600px;
+  width: 600px;
+  margin-top: -30px;
+  margin-left: -15px;
+  mix-blend-mode:hard-light;
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 10%, transparent 100%);
+}
+
+.skill-box{
+  height:fit-content;
+}
+.skill-2{
+  height:fit-content;
+  width:auto;
+  border: 1px dashed red;
+
+}
+.s-img{
+  height:200px;
+  width:100px;
+}
