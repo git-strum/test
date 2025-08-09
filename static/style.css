@@ -20,10 +20,11 @@ nav ul{
   position: relative;
   margin-right:20px;
 }
-@media (max-width: 720px) {
+@media (max-width: 643px) {
   nav ul {
-    gap: 0.5rem; /* Reduce the gap for smaller screens */
+    gap: 0.3rem; /* Reduce the gap for smaller screens */
     margin-right: 10px; /* Reduce the margin as well */
+    font-size: x-small;
   }
 }
 nav a{
