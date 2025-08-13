@@ -103,7 +103,7 @@ nav li a:hover {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 96px;
+  margin-top: 94px;
 }
 
 @media (max-width: 768px) {
