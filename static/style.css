@@ -1,36 +1,45 @@
 body {
   margin: 0;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Styling of nav bar */
+
 nav {
-  background-color: rgba(0,0,0,255);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 255);
   padding: 20px;
   display: flex;
-  gap: 10px;
   justify-content: space-between;
   align-items: center;
   padding-right: 50px;
-  margin: 0 auto;
+  z-index: 10;
 }
-nav ul{
+nav ul {
   display: inline-flex;
-  gap:4rem;
+  gap: 4rem;
   padding: 0;
   list-style: none;
 }
 
-@media(max-width:768px){
-  nav ul{
-    flex-wrap: wrap;
+@media (max-width: 768px) {
+  nav ul {
+    position: absolute;
+    flex-direction: column;
+    padding: 15px;
+    top: 10.8%;
+    right: 1.8%;
+    text-align: center;
   }
 }
 
-nav a{
+nav a {
   color: rgba(207, 219, 223, 0.999);
   text-decoration: none;
-  display:inline-block;
+  display: inline-block;
 }
 nav li a:hover {
   color: rgb(250, 248, 248);
@@ -38,21 +47,33 @@ nav li a:hover {
   transition: transform 0.1s;
 }
 
-.name-logo img{
-  width:150px;
-  height:70px;
+.name-logo img {
+  width: 150px;
+  height: 70px;
 }
 
-.name-logo h1{
+.name-logo {
+  align-self: center;
+  padding-left: 1rem;
+}
+.name-logo h1 {
   overflow: hidden;
-  background: linear-gradient(45deg, rgb(250, 248, 248), #d9b1a5,#54533e,#ae1313, #30b1f0, #6e30f0);
-  background-size: 400% 400%;    /* For an animated effect */
+  background: linear-gradient(
+    45deg,
+    rgb(250, 248, 248),
+    #d9b1a5,
+    #54533e,
+    #ae1313,
+    #30b1f0,
+    #6e30f0
+  );
+  background-size: 400% 400%; /* For an animated effect */
   /* animation: gradient-animation 15s ease; */
   animation: gradient-effect 6s ease infinite;
   background-clip: text;
   color: transparent;
   font-weight: bold;
-  margin:0;
+  margin: 0;
   padding: 10px;
   box-sizing: border-box;
 }
@@ -68,76 +89,94 @@ nav li a:hover {
   }
 }
 
-
 /* Styling of hero section */
 
 .hero {
   color: rgba(207, 219, 223, 0.999);
   font-size: 1em;
-  background-image: url('./images/hero.png');
-  background-repeat:no-repeat;
+  background-image: url("./images/hero.png");
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  min-height: 90vh;
+  min-height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-top: 96px;
 }
 
-@media (max-width:768px){
-  .hero{
+@media (max-width: 768px) {
+  .hero {
     flex-direction: column;
     align-items: center;
   }
-  .hero-intro{
-    transform: translate(6%, -50%) !important
+  .hero-intro {
+    transform: translate(-64%, 94%) !important;
   }
-  .nav ul{
+  nav ul {
     align-self: center;
     flex-direction: column;
   }
 }
 .hero-intro {
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: absolute;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.8);
   border-radius: 1px;
   padding: 15px;
   width: fit-content;
   box-sizing: border-box;
   align-self: center;
-  transform: translate(85%,-85%);
-  caret: none;
+  top: 40%;
+  left: 55%;
+  text-align: end;
+  /* transform: translate(85%,-85%); */
 }
 
-.my-pic{
-  background-image: url('./images/my_pic.png');
+.my-pic {
+  background-image: url("./images/my_pic.png");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 650px;
+  height:650px;
   width: 650px;
-  mix-blend-mode:hard-light;
+  mix-blend-mode: hard-light;
   -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 10%, transparent 100%);
+  margin-bottom: 10%;
 }
 
-@media(max-width:768px){
-  .my-pic{
-    height:400px;
-    width:400px;
+@media (max-width: 768px) {
+  .my-pic {
+    height: 400px;
+    width: 400px;
   }
 }
-.skill-box{
-  height:fit-content;
+
+.section-info {
+  text-align: center;
+  padding: 5px;
+  box-shadow: 0px 5px 5px #f8f6f5;
 }
-.skill-2{
-  height:fit-content;
-  width:auto;
-  border: 1px dashed red;
+.sec-head{
+  background: linear-gradient(180deg, #66411e 0 20%, #cb2828 40% 90%);
+  background-size: 200% 200%;
+  background-clip: text;
+  color: transparent;
 }
-.s-img{
-  height:200px;
-  width:100px;
+.skill-box {
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  gap:20px;
+  padding: 5rem;
+  flex-wrap: wrap;
+}
+
+.s-img {
+  height: 200px;
+  width: 100px;
+  object-fit: contain;
 }
 
 .helper-line {
@@ -149,4 +188,3 @@ nav li a:hover {
   background: red;
   pointer-events: none; /* so it doesn’t block clicks */
 }
-
