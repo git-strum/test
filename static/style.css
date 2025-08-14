@@ -195,3 +195,10 @@ nav li a:hover {
   letter-spacing: 4px;
   font-size: 13px;
 }
+
+@media(max-width:768px){
+  .hero-intro span{
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+}
