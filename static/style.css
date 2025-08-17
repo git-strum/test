@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
 }
 
 /* Styling of nav bar */
@@ -18,34 +19,64 @@ nav {
   padding-right: 50px;
   z-index: 10;
 }
-nav ul {
+
+.menu {
   display: inline-flex;
   gap: 4rem;
   padding: 0;
   list-style: none;
 }
 
-@media (max-width: 768px) {
-  nav ul {
-    position: absolute;
-    flex-direction: column;
-    padding: 15px;
-    top: 10.8%;
-    right: 1.8%;
-    text-align: center;
-  }
-}
-
-nav a {
+nav a{
   color: rgba(207, 219, 223, 0.999);
   text-decoration: none;
   display: inline-block;
 }
+
 nav li a:hover {
   color: rgb(250, 248, 248);
   transform: scale(1.1);
   transition: transform 0.1s;
 }
+
+.menu-bar{
+  display:none;
+}
+
+#menu-toggle{
+  display: none;
+}
+/*nav for mobile screen*/
+
+@media (max-width: 768px) {
+  .menu {
+    /* display:none !important; */
+    visibility: hidden;
+    transform: translateX(100%);
+    position: absolute;
+    flex-direction: column;
+    padding: 15px;
+    top: 6%;
+    right: 0;
+    text-align: center;
+    background-color:#11111b;
+    border-radius: 2rem;
+    transition: all 0.6s ease; 
+  }
+  .menu-bar{
+    position: absolute;
+    display:block;
+    z-index: 10000;
+    right: 5%;
+  }
+  #menu-toggle:checked ~ .menu{
+    display:flex !important;
+    padding-right: 10%;
+    visibility: visible; 
+    transform: translateX(0);
+  }
+}
+
 
 .name-logo img {
   width: 150px;
@@ -98,7 +129,7 @@ nav li a:hover {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  min-height: 100vh;
+  height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -110,16 +141,11 @@ nav li a:hover {
   .hero {
     flex-direction: column;
     align-items: center;
-  }
-  .hero-intro {
-    transform: translate(-64%, 94%) !important;
-  }
-  nav ul {
-    align-self: center;
-    flex-direction: column;
+    height: 80vh;
   }
 }
 .hero-intro {
+  color: rgb(250, 248, 248);
   letter-spacing: 2px;
   position: absolute;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -133,6 +159,26 @@ nav li a:hover {
   left: 55%;
   text-align: center;
   /* transform: translate(85%,-85%); */
+}
+
+@media(max-width:768px){
+  .hero-intro {
+    transform: translate(-55%, 94%) !important
+  }
+}
+
+.hero-intro span{
+  color: rgb(250, 248, 248);
+  letter-spacing: 4px;
+  font-size: 14px;
+  z-index: 1000;
+}
+
+@media(max-width:768px){
+  .hero-intro span{
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
 }
 
 .my-pic {
@@ -158,6 +204,7 @@ nav li a:hover {
   text-align: center;
   padding: 5px;
   box-shadow: 0px 5px 5px #f8f6f5;
+  background-color: rgba(250, 248, 246, 0.941);
 }
 .sec-head{
   background: linear-gradient(180deg, #66411e 0 20%, #cb2828 40% 90%);
@@ -165,6 +212,28 @@ nav li a:hover {
   background-clip: text;
   color: transparent;
 }
+
+
+.sec-text{
+  padding: 1.5rem;
+  max-width:1100px;
+  margin: auto;
+  text-align: left;
+  border-radius: 2rem;
+  transition: all 0.3s ease;  
+}
+
+.sec-text p{
+  letter-spacing: 1px;
+  line-height: 1.8rem;
+  color: #54533e;
+}
+
+.sec-text:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
 .skill-box {
   display: flex;
   align-items: center;
@@ -178,6 +247,12 @@ nav li a:hover {
   height: 200px;
   width: 100px;
   object-fit: contain;
+  border-radius: 0.6rem;
+}
+.s-img:hover{
+  transition: all 0.3s ease;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 .helper-line {
@@ -190,15 +265,51 @@ nav li a:hover {
   pointer-events: none; /* so it doesn’t block clicks */
 }
 
-.hero-intro span{
-  color:whitesmoke;
-  letter-spacing: 4px;
-  font-size: 13px;
+
+footer{
+  position: relative;
+  background: linear-gradient(33deg,#080808,rgb(141, 131, 131),#5e2b30);
+  padding: 20px;
 }
 
-@media(max-width:768px){
-  .hero-intro span{
-    font-size: 10px;
-    letter-spacing: 3px;
-  }
+footer a {
+  text-decoration: none;
+}
+
+.f-1 {
+  position: absolute;
+  top: 25%;
+  left: 15%;      /* force it to sit above everything */
+}
+.panel-1{
+  color: rgba(207, 219, 223, 0.999);
+  text-align: center;
+}
+
+
+.panel-2 {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 0;
+}
+
+.panel-3 {
+  display: flex;
+  justify-content: center;
+  /* background-color: rgb(61, 80, 106); */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%
+}
+.panel-3 a {
+  color: ghostwhite;
+}
+
+.footer-img{
+  height:30px;
+  width:30px;
+  box-sizing: border-box;
 }
