@@ -245,12 +245,26 @@ nav li a:hover {
   gap:20px;
   padding: 5rem;
   flex-wrap: wrap;
+  text-align: center;
+}
+
+
+.skill-box strong{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 10px;
+  transition: transform 0.6s ease;
+  display: block;
+  padding: 2px;
+}
+
+.skill-box strong:hover{
+  transform: translateY(-4.6px);
 }
 
 .s-img {
-  height: 200px;
+  height: auto;
   width: 100px;
-  object-fit: contain;
+  object-fit: fill;
   border-radius: 0.6rem;
 }
 .s-img:hover{
