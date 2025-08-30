@@ -2,6 +2,7 @@ html, body {
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   width: 100%;
+  user-select: none;
 }
 
 /* Styling of nav bar */
@@ -151,25 +152,25 @@ nav li a:hover {
     flex-direction: column;
     align-items: center;
     height: 80vh;
+    overflow-x: clip;
   }
 }
 .hero-intro {
   color: rgb(250, 248, 248);
   letter-spacing: 2px;
   position: absolute;
-  /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
   font-family:Montserrat; 
   box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.8);
   border-radius: 1px;
   padding: 15px;
-  width: auto;
   box-sizing: border-box;
   align-self: center;
+  width: auto;
   top: 40%;
-  left: 55%;
+  left: 56%;
   text-align: center;
   transition: all 0.6s ease;
-  font-size: 2em;
+  font-size: 1.6em;
   line-height: 0.6em;
   pointer-events: none;
 }
@@ -234,10 +235,12 @@ nav li a:hover {
 
 .sec-text{
   padding: 1.5rem;
-  max-width:1100px;
+  width:fit-content;
+  max-width: 1100px;
   margin: auto;
   text-align: left;
-  border-radius: 2rem;
+  border-radius: 1rem;
+  padding: 2rem;
   transition: all 0.3s ease;  
 }
 
@@ -262,6 +265,13 @@ nav li a:hover {
   text-align: center;
 }
 
+@media(max-width:768px){
+.skill-dex{
+  width: 45%;
+  padding: 2.6px;
+  box-sizing: border-box;
+}
+}
 
 .skill-box strong{
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -312,7 +322,6 @@ textarea{
   height:100%;
   border-radius: 10px;
   background: linear-gradient(90deg, #30b1f0, #6e30f0);
-  transition: width 3s ease;
   animation: fill-prg 2s ease forwards;
 }
 
@@ -322,17 +331,57 @@ textarea{
   }
 } 
 
-.helper-line {
-  position: absolute;
-  top: 20%; /* adjust percentage for exact alignment */
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: red;
-  pointer-events: none; /* so it doesn’t block clicks */
+.contact-form{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  /* width:100vw; */
+  gap:20px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+@media(max-width:768px){
+  .contact-form{
+    flex-direction: column;
+  }
+  form{
+    width:90% !important;
+  }
+}
+.contact-image img{
+  width:100%;
+  height: auto;
 }
 
+.contact-image{
+  width:45%;
+  padding: 5px;
+  height: fit-content;
+  mix-blend-mode:luminosity;
+}
 
+form{
+  background: linear-gradient(45deg, rgb(104, 129, 129), rgb(118, 69, 35));
+  padding: 15px;
+  width: 20%;
+  display:flex;
+  gap:10px;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+form input{
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  border: hidden;
+}
+
+form label{
+  color:white;
+  font-weight: 300;
+}
 
 footer {
   position: relative;
@@ -351,15 +400,15 @@ footer a {
   color: inherit;
 }
 
-/* left */
-.footer-left {
+/* right */
+.footer-r {
   font-weight: 600;
   font-size: 1rem;
   transition: all 0.3s ease;
   cursor:pointer;
 }
 
-.footer-left:hover{
+.footer-r:hover{
   color:rgb(113, 207, 113);
   transform: translateY(-1.5px);  
 }
@@ -368,9 +417,9 @@ footer a {
 .footer-center {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 15px;
   text-align: center;
+  max-width: 400px;
 }
 
 .footer-heading {
@@ -383,6 +432,7 @@ footer a {
 .footer-icons {
   display: flex;
   gap: 15px;
+  justify-content: space-between;
 }
 
 .footer-icons img {
@@ -402,15 +452,15 @@ footer a {
   color: #aaa;
 }
 
-/* right */
-.footer-right h1 {
+/* left */
+.footer-l h1 {
   font-size: 1.2rem;
   font-weight: bold;
   color: #eee;
   transition: color 0.3s ease;
 }
 
-.footer-right h1:hover {
+.footer-l h1:hover {
   color: #0a6c8d;
   cursor: pointer;
 }
@@ -420,6 +470,6 @@ footer a {
   footer {
     flex-direction: column;
     text-align: center;
-    gap: 20px;
+    gap: 2em;
   }
 }
