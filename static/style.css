@@ -225,7 +225,7 @@ nav li a:hover {
   background-color: rgb(241, 240, 240);
 }
 .sec-head{
-  font-size: 1.1rem;
+  font-size: 1rem;
   text-align: center;
   background: linear-gradient(60deg,rgb(94, 42, 42) 0 40%, rgb(82, 82, 128) 70%);
   background-color: #ae1313;
@@ -358,7 +358,6 @@ nav li a:hover {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  flex-wrap: wrap;
   gap:20px;
   padding: 10px;
   box-sizing: border-box;
