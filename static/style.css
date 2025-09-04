@@ -1,8 +1,11 @@
 html, body {
   margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   width: 100%;
   user-select: none;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+html{
+  scroll-padding-top: 96px;
 }
 
 /* Styling of nav bar */
@@ -147,19 +150,25 @@ nav li a:hover {
   padding-top: 96px;
 }
 
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    align-items: center;
-    height: 80vh;
-    overflow-x: clip;
-  }
+.my-pic {
+  user-select: none;
+  background-image: url("./images/my_pic.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height:650px;
+  width: 650px;
+  mix-blend-mode: hard-light;
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 10%, transparent 100%);
+  margin-bottom: 10%;
 }
+
+
 .hero-intro {
+  font-family: Montserrat;
   color: rgb(250, 248, 248);
   letter-spacing: 2px;
-  position: absolute;
-  font-family:Montserrat; 
+  position: absolute; 
   box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.8);
   border-radius: 1px;
   padding: 15px;
@@ -175,9 +184,24 @@ nav li a:hover {
   pointer-events: none;
 }
 
+.hero-intro span{
+  color: rgb(250, 248, 248);
+  letter-spacing: 4px;
+  font-size: 14px;
+}
+
 @media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+    overflow-x: clip;
+  }
+  .my-pic {
+    height: 400px;
+    width: 400px;
+  }
   .hero-intro {
-    font-family: 'Playfair Display', serif;
     transform: translate(5px, 0);
     max-width: 200px;
     left: auto;
@@ -190,48 +214,18 @@ nav li a:hover {
     align-items: center;
     line-height: 1.5;
   }
-}
-
-.hero-intro span{
-  color: rgb(250, 248, 248);
-  letter-spacing: 4px;
-  font-size: 14px;
-  z-index: 1000;
-}
-
-@media(max-width:768px){
   .hero-intro span{
     font-size: 11px;
     letter-spacing: 2px;
   }
 }
 
-.my-pic {
-  user-select: none;
-  background-image: url("./images/my_pic.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  height:650px;
-  width: 650px;
-  mix-blend-mode: hard-light;
-  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 10%, transparent 100%);
-  margin-bottom: 10%;
-}
-
-@media (max-width: 768px) {
-  .my-pic {
-    height: 400px;
-    width: 400px;
-  }
-}
-
 .section-info {
-  padding: 5px;
   box-shadow: 0px 5px 5px #f8f6f5;
   background-color: rgb(241, 240, 240);
 }
 .sec-head{
+  padding:10px;
   font-size: 1rem;
   text-align: center;
   background: linear-gradient(60deg,rgb(94, 42, 42) 0 40%, rgb(82, 82, 128) 70%);
@@ -240,6 +234,9 @@ nav li a:hover {
   color: transparent;
 }
 
+.sec-head h1{
+  margin: 0;
+}
 
 .sec-text{
   padding: 1.8rem;
@@ -262,8 +259,9 @@ nav li a:hover {
 
 @media(max-width:768px){
   .sec-text{
+    text-align: center;
     font-size: 0.9em;
-    padding: 0.2em;
+    padding: 1em;
   }
   .sec-head{
     font-size:0.8rem;
@@ -274,16 +272,14 @@ nav li a:hover {
 
 .skill-box {
   display: flex;
-  align-items: center;
   justify-content:center;
   gap:20px;
-  padding: 15px;
+  padding: 40px 20px; 
   flex-wrap: wrap;
   text-align: center;
 }
 
 .skill-box strong{
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 0.5em;
   letter-spacing: 2px;
   transition: transform 0.6s ease;
@@ -300,7 +296,12 @@ nav li a:hover {
   padding:1.2em;
   width:10%;
   border-radius: 10px;
-  box-shadow: 0px 1px 12px 5px rgb(229, 227, 227) ;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: all 0.6s ease;
+}
+
+.skill-dex:hover {
+  transform: translateY(-4px);
 }
 
 .imd{
@@ -442,7 +443,6 @@ textarea{
 .form-heading h2{margin:0}
 
 .bttn{
-  font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: 400;
   letter-spacing: 2px;
   transition: all 0.6s ease;
@@ -500,7 +500,6 @@ footer a {
 
 .footer-heading {
   font-size: 0.9rem;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #aaa;
