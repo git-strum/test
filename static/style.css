@@ -209,7 +209,7 @@ nav li a:hover {
     position: relative;
     bottom: 20%;
     display: flex;
-    font-size: 0.8em;
+    font-size: 1em;
     flex-direction: column;
     align-items: center;
     line-height: 1.5;
