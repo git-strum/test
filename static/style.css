@@ -384,18 +384,19 @@ nav li a:hover {
 }
 
 .contact-image img{
-  width:450px;
-  height:450px;
+  width:400px;
+  height:400px;
 }
 
-.mask{
+.contact-image::before{
+  content:'';
   mix-blend-mode: color;
   mask-image: url("./images/cont.png");
   -webkit-mask-image: url("./images/cont.png");
   inset:0;
   position:absolute;
   background: var(--rc);
-  mask-size: 93% 93%;
+  mask-size: 96% 92%;
   mask-position: center;
 }
 

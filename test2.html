@@ -13,17 +13,18 @@
   
 
   .contact-image{
+    width:450px;
+    height:450px;
     position: relative;
     padding: 1em;
     height: fit-content;
   }
   
   .contact-image img{
-    width:450px;
-    height:450px;
+    width:100%
   }
 
-  .mask{
+  .contact-image::before{
     mix-blend-mode: color;
     mask-image: url("./images/cont.png");
     -webkit-mask-image: url("./images/cont.png");
