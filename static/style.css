@@ -443,6 +443,9 @@ textarea{
     max-width:300px;
     max-height:300px;
   }
+  .mask{
+    mask-size: 98% 90%;
+  }
 }
 
 .form-heading {
