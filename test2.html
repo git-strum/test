@@ -1,0 +1,137 @@
+<style>
+  :root{
+    --rc:linear-gradient(45deg, rgb(104, 129, 129), rgb(118, 69, 35));
+  }
+  .contact-form{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap:20px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+
+  .contact-image{
+    position: relative;
+    padding: 1em;
+    height: fit-content;
+  }
+  
+  .contact-image img{
+    width:450px;
+    height:450px;
+  }
+
+  .mask{
+    mix-blend-mode: color;
+    mask-image: url("./images/cont.png");
+    -webkit-mask-image: url("./images/cont.png");
+    inset:0;
+    position:absolute;
+    background: var(--rc);
+    mask-size: 93% 93%;
+    mask-position: center;
+  }
+  
+  form{
+    z-index: 2;
+    position: relative;
+    background: linear-gradient(45deg, rgb(104, 129, 129), rgb(118, 69, 35));
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 40%;
+    display:flex;
+    gap:10px;
+    flex-direction: column;
+    border-radius: 10px;
+  }
+  
+  form input{
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    border: none;
+  }
+  
+  form label{
+    color:white;
+    font-weight: 400;
+  }
+  
+  textarea{
+    border-radius: 10px;
+    resize:none;
+    padding:10px;
+  }
+  
+  @media(max-width:768px){
+    .contact-form{
+      padding: 38px;
+      margin: auto;
+      flex-direction: column;
+    }
+    form{
+      width:100%;
+    }
+  }
+  
+  .form-heading {
+    z-index:1;
+    box-sizing: border-box;
+    border-radius: 70px 10px 0px 0px;
+    position: absolute;
+    top: -40px; 
+    left:0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(45deg, rgb(57, 61, 61), rgb(118, 69, 35));
+    text-align: center;
+    color: white;
+    padding: 10px;
+    box-shadow: 0 5px 10px 5px rgba(212, 203, 203, 0.2);
+  }
+  .form-heading h2{margin:0}
+  
+  .bttn{
+    font-weight: 400;
+    letter-spacing: 2px;
+    transition: all 0.6s ease;
+  }
+  .bttn:hover{background: linear-gradient(45deg, rgb(57, 61, 61), rgb(118, 69, 35));  ;color:white;}
+  .bttn:active{background: linear-gradient(140deg,#09811b 0 20%, #aec8b1 95%);color:white;}
+
+
+</style>
+
+<section class="section-info" id="contact">
+  <div class="sec-head">
+  <h1>
+    Contact Me
+  </h1>
+</div>
+  <div class="contact-form">
+    <div class="contact-image">
+      <div class="mask"></div>
+      <img src="./static/images/cont.png">
+    </div>
+    <form action="#">
+      <div class="form-heading"><h2>Ask your query</h2></div>
+      <!--"for" in label is to map with "id" of input box/area-->
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required />
+      <label for="mobile">Mobile</label>
+      <input type="number" id="mobile" name="mobile" required />
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+      <label for="message">Message</label>
+      <textarea
+        id="message"
+        name="message"
+        rows="15"
+        required
+      ></textarea>
+      <input class="bttn" type="submit" value="Send" />
+    </form>
+  </div>
+</section>

@@ -8,6 +8,10 @@ html{
   scroll-padding-top: 96px;
 }
 
+:root{
+  --rc:linear-gradient(45deg, rgb(104, 129, 129), rgb(118, 69, 35));
+}
+
 /* Styling of nav bar */
 
 nav {
@@ -362,8 +366,8 @@ nav li a:hover {
 
 /* Contact section*/
 
-
 .contact-form{
+  margin-top:60px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -372,15 +376,27 @@ nav li a:hover {
   box-sizing: border-box;
 }
 
+
 .contact-image{
-  width:40%;
+  position: relative;
   padding: 1em;
   height: fit-content;
-  mix-blend-mode:luminosity;
 }
 
 .contact-image img{
-  width:100%;
+  width:450px;
+  height:450px;
+}
+
+.mask{
+  mix-blend-mode: color;
+  mask-image: url("./images/cont.png");
+  -webkit-mask-image: url("./images/cont.png");
+  inset:0;
+  position:absolute;
+  background: var(--rc);
+  mask-size: 93% 93%;
+  mask-position: center;
 }
 
 form{
@@ -422,6 +438,10 @@ textarea{
   }
   form{
     width:100%;
+  }
+  .contact-image img{
+    max-width:300px;
+    max-height:300px;
   }
 }
 
