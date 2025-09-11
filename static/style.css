@@ -386,6 +386,7 @@ nav li a:hover {
 .contact-image img{
   width:400px;
   height:400px;
+  display: block;
 }
 
 .contact-image::before{
@@ -396,9 +397,12 @@ nav li a:hover {
   inset:0;
   position:absolute;
   background: var(--rc);
-  mask-size: 96% 92%;
-  mask-position: center;
+  mask-size: 96% 93%;
+  right:16px;
+  mask-position: right;
 }
+
+
 
 form{
   z-index: 2;
@@ -444,8 +448,9 @@ textarea{
     max-width:300px;
     max-height:300px;
   }
-  .mask{
-    mask-size: 98% 90%;
+  .contact-image::before{
+    mask-size: 96% 90%;
+    right:14px;
   }
 }
 

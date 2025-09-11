@@ -10,6 +10,25 @@
     padding: 10px;
     box-sizing: border-box;
   }
+  .moon {
+    width: 200px;
+    height: 200px;
+    background: gold;
+    border-radius: 50%;
+    clip-path: circle(50% at 40% 50%);
+  }
+  
+
+
+  <svg width="200" height="200">
+    <defs>
+      <clipPath id="moon">
+        <circle cx="100" cy="100" r="90"/>
+        <circle cx="130" cy="100" r="90"/>
+      </clipPath>
+    </defs>
+    <circle cx="100" cy="100" r="90" fill="gold" clip-path="url(#moon)"/>
+  </svg>
   
 
   .contact-image{
@@ -113,7 +132,6 @@
 </div>
   <div class="contact-form">
     <div class="contact-image">
-      <div class="mask"></div>
       <img src="./static/images/cont.png">
     </div>
     <form action="#">
@@ -135,4 +153,5 @@
       <input class="bttn" type="submit" value="Send" />
     </form>
   </div>
+  <div class="moon"></div>
 </section>
