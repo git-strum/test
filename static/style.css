@@ -289,6 +289,11 @@ nav li a:hover {
   .Abt-cont p{
     grid-column: 1; 
   }
+  
+  .Abt-cont img{
+    width:200px; 
+  }
+
 
   .sec-head{
     font-size:0.8rem;
