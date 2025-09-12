@@ -266,9 +266,9 @@ nav li a:hover {
 
 .Abt-cont p{
   grid-column: 2;
-  letter-spacing: 1.2px;
-  line-height: 2.2em;
-  color: #0b0938;
+  letter-spacing: 1px;
+  line-height: 2;
+  color: #161618;
   padding: 10px;
 }
 
