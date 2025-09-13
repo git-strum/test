@@ -10,6 +10,8 @@ html{
 
 :root{
   --rc:linear-gradient(45deg, rgb(104, 129, 129), rgb(118, 69, 35));
+  --default-font: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Jost", sans-serif;
 }
 
 /* Styling of nav bar */
@@ -229,7 +231,9 @@ nav li a:hover {
   background-color: rgb(241, 240, 240);
 }
 .sec-head{
+  position: relative;
   padding:10px;
+  padding-top: 40px;
   font-size: 1rem;
   text-align: center;
   background: linear-gradient(60deg,rgb(94, 42, 42) 0 40%, rgb(82, 82, 128) 70%);
@@ -239,29 +243,64 @@ nav li a:hover {
 }
 
 .sec-head h1{
+  font-size: 25px;
+  font-family:var(--heading-font);
+  font-weight: 600;
+  text-transform: uppercase;
   margin: 0;
+  margin-bottom: 10px;
+}
+
+.sec-head::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 160px;
+  height: 2px;
+  background: linear-gradient(45deg,transparent,grey, transparent);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.sec-head::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(60deg, rgb(94, 42, 42) 0 40%, rgb(82, 82, 128) 80%);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
 }
 
 .Abt-cont{
   display:grid;
   align-items: center;
   grid-template-columns: 1fr 2fr;
-  padding: 1.8rem;
-  margin: auto;
   text-align: left;
   border-radius: 1rem;
   transition: all 0.3s ease;  
   gap:10px;
   justify-items: center;
+  box-sizing: border-box;
 }
 
 .Abt-cont img{
   border-radius: 50%;
-  box-shadow: 0px 10px 20px rgb(154, 153, 153);
+  box-shadow: 0px 6px 14px rgb(154, 153, 153);
   max-width: 100%;  
   height: auto; 
   object-fit: cover;
   transition: all 0.6s ease;
+}
+
+.Abt-cont img:hover{
+  transform: scale(10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 .Abt-cont p{
@@ -271,12 +310,6 @@ nav li a:hover {
   color: #161618;
   padding: 10px;
 }
-
-.Abt-cont:hover{
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-
 
 @media(max-width:768px){
   .Abt-cont{
@@ -291,7 +324,7 @@ nav li a:hover {
   }
   
   .Abt-cont img{
-    width:200px; 
+    width:250px; 
   }
 
 
